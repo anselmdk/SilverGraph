@@ -266,9 +266,17 @@ class Silvergraph extends CliController {
             }
 
             $field->DataType = $dataType;
-            $fields->push($field);
-        }
 
+            if(!(
+                $fieldName == 'ID' ||
+                $fieldName == 'ClassName' ||
+                $fieldName == 'LastEdited' ||
+                $fieldName == 'Created'
+            )) {
+                $fields->push($field);
+            }
+
+        }
         return $fields;
     }
 
