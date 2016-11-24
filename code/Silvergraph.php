@@ -261,7 +261,7 @@ class Silvergraph extends CliController {
             $field->FieldName = $fieldName;
 
             //special case - Enums are too long - put new lines on commas
-            if (strpos($dataType, "Enum") === 0) {
+            if (is_string($dataType) && strpos($dataType, "Enum") === 0) {
                 $dataType = str_replace(",", ",\n", $dataType);
             }
 
